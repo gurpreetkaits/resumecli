@@ -22,9 +22,13 @@ git clone https://github.com/gurpreetkaits/resumecli.git
 cd resumecli
 npm install
 
-# Set up your API key
+# Set up authentication (choose one method)
+# Method 1: Use API key in .env file
 cp .env.example .env
 # Edit .env and add your ANTHROPIC_API_KEY
+
+# Method 2: Use Claude setup/login (if you have Claude CLI/Code installed)
+# Just run the tool - it will use your existing Claude authentication
 
 # Run
 npx tsx bin/resumeforge.ts
@@ -64,11 +68,39 @@ npx tsx bin/resumeforge.ts \
 | `-f, --format <fmt>` | `pdf`, `docx`, or `both` | `pdf` |
 | `-n, --name <name>` | Output filename (no extension) | `resume` |
 
+## Authentication
+
+The CLI supports multiple authentication methods (checked in order):
+
+**Option 1: .env file (recommended)**
+```bash
+cp .env.example .env
+# Edit .env and add your Anthropic API key
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+**Option 2: Environment Variable**
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+# or
+export CLAUDE_API_KEY=sk-ant-...
+```
+
+**Option 3: Claude Config File**
+Create `~/.claude/config.json`:
+```json
+{
+  "apiKey": "sk-ant-..."
+}
+```
+
+The tool will automatically use the first available authentication method.
+
 ## Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `ANTHROPIC_API_KEY` | Yes | Your Anthropic API key |
+| `ANTHROPIC_API_KEY` | No* | Your Anthropic API key (*required if not using Claude auth) |
 | `GITHUB_TOKEN` | No | GitHub PAT (increases rate limits) |
 
 ## Design

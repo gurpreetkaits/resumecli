@@ -16,7 +16,7 @@ import {
 } from "./cli/prompts.js";
 import { fetchGitHubProfile } from "./collectors/github.js";
 import { collectLinkedInData } from "./collectors/linkedin.js";
-import { analyzeJobDescription, generateResume } from "./ai/client.js";
+import { analyzeJobDescription, generateResume, initializeClient } from "./ai/client.js";
 import { generatePdf } from "./generators/pdf.js";
 import { generateDocx } from "./generators/docx.js";
 import type {
@@ -27,6 +27,9 @@ import type {
 } from "./types/resume.js";
 
 export async function run(config: AppConfig): Promise<void> {
+  // Initialize the Anthropic client (supports both API key and Claude setup token)
+  await initializeClient();
+
   const totalSteps = 6;
 
   // ─── Step 1: GitHub ────────────────────────────
