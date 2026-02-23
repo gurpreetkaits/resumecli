@@ -1,0 +1,7 @@
+node_modules/
+dist/
+output/*.pdf
+output/*.docx
+.env
+*.tsbuildinfo
+.DS_Store

@@ -1,0 +1,33 @@
+{
+  "name": "resumeforge",
+  "version": "1.0.0",
+  "description": "AI-powered resume builder CLI using Claude",
+  "type": "module",
+  "bin": {
+    "resumeforge": "./bin/resumeforge.ts"
+  },
+  "scripts": {
+    "start": "tsx bin/resumeforge.ts",
+    "build": "tsup bin/resumeforge.ts --format esm --dts",
+    "dev": "tsx watch bin/resumeforge.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@inquirer/prompts": "^7.0.0",
+    "@octokit/rest": "^21.0.0",
+    "chalk": "^5.4.0",
+    "commander": "^13.0.0",
+    "docx": "^9.0.0",
+    "dotenv": "^16.4.0",
+    "handlebars": "^4.7.8",
+    "ora": "^8.1.0",
+    "puppeteer": "^24.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}
