@@ -1,4 +1,4 @@
-# ResumeForge
+# resumecli
 
 AI-powered resume builder CLI that generates professional, ATS-optimized PDF and DOCX resumes using Claude.
 
@@ -18,8 +18,8 @@ Provide your GitHub profile, LinkedIn data, and a target job description — Cla
 
 ```bash
 # Clone and install
-git clone https://github.com/YOUR_USERNAME/resumeforge.git
-cd resumeforge
+git clone https://github.com/gurpreetkaits/resumecli.git
+cd resumecli
 npm install
 
 # Set up your API key

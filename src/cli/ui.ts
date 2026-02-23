@@ -18,7 +18,7 @@ export function printBanner(): void {
   );
   console.log(
     theme.coral.bold("  ║") +
-      chalk.white.bold("       ResumeForge  ") +
+      chalk.white.bold("       resume-cli   ") +
       theme.secondary("v1.0.0") +
       theme.coral.bold("        ║")
   );

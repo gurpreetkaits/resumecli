@@ -8,7 +8,7 @@ import { run } from "../src/index.js";
 const program = new Command();
 
 program
-  .name("resumeforge")
+  .name("resumecli")
   .description("AI-powered resume builder using Claude")
   .version("1.0.0")
   .option("-g, --github <url>", "GitHub profile URL or username")

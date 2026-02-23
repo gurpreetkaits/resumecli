@@ -1,15 +1,15 @@
 {
-  "name": "resumeforge",
+  "name": "resumecli",
   "version": "1.0.0",
   "description": "AI-powered resume builder CLI using Claude",
   "type": "module",
   "bin": {
-    "resumeforge": "./bin/resumeforge.ts"
+    "resumecli": "./bin/resumecli.ts"
   },
   "scripts": {
-    "start": "tsx bin/resumeforge.ts",
-    "build": "tsup bin/resumeforge.ts --format esm --dts",
-    "dev": "tsx watch bin/resumeforge.ts"
+    "start": "tsx bin/resumecli.ts",
+    "build": "tsup bin/resumecli.ts --format esm --dts",
+    "dev": "tsx watch bin/resumecli.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
