@@ -16,7 +16,7 @@ import {
 } from "./cli/prompts.js";
 import { fetchGitHubProfile } from "./collectors/github.js";
 import { collectLinkedInData } from "./collectors/linkedin.js";
-import { analyzeJobDescription, generateResume, initializeClient } from "./ai/client.js";
+import { analyzeJobDescription, generateResume, initializeClient, getProviderLabel } from "./ai/client.js";
 import { generatePdf } from "./generators/pdf.js";
 import { generateDocx } from "./generators/docx.js";
 import type {
@@ -27,8 +27,9 @@ import type {
 } from "./types/resume.js";
 
 export async function run(config: AppConfig): Promise<void> {
-  // Initialize the Anthropic client (supports both API key and Claude setup token)
+  // Initialize the AI client (supports Anthropic and OpenAI)
   await initializeClient();
+  printInfo(`Using ${getProviderLabel()}`);
 
   const totalSteps = 6;
 
@@ -128,7 +129,7 @@ export async function run(config: AppConfig): Promise<void> {
   printDivider();
 
   const aiSpinner = createSpinner(
-    "Claude is crafting your tailored resume..."
+    "AI is crafting your tailored resume..."
   );
   aiSpinner.start();
 
